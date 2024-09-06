@@ -1,0 +1,26 @@
+{
+  "name": "iomnium-restaurent-website-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missipsag/IOMNIUM-restaurent-website-V2.git"
+  },
+  "author": "Missipsa GHERNAOUT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missipsag/IOMNIUM-restaurent-website-V2/issues"
+  },
+  "homepage": "https://github.com/missipsag/IOMNIUM-restaurent-website-V2#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.1",
+    "path": "^0.12.7"
+  }
+}
