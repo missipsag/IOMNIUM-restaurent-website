@@ -1,8 +1,9 @@
 const express = require("express");
 const PORT = 3000;
 const ejsMate = require("ejs-mate");
-const path = require("path")
-const productRoutes = require("./routes/productRoutes")
+const path = require("path");
+const productRoutes = require("./routes/productRoutes");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -16,17 +17,18 @@ db.once("open", ()=>{
 
 //set up the view engine
 app.engine("ejs", ejsMate);
-app.set("views", path.join(__dirname, views));
+app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 
 //set up our routes
-app.use("/products", productRoutes);
+app.use("/IOMNIUM", productRoutes);
 
-app.get("/", (req, res) => {
-    res.send("WELCOME TO IOMNIUM RESTAURENT WEBSITE");
-})
+//set up the static file directory 
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.listen(PORT, ()=>{
-    console.log(`SERVER RUNNING ON PORT ${PORT} `)
+    console.log(`SERVER RUNNING ON PORT ${PORT} `);
 })

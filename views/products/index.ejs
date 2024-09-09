@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOMNIUM</title>
-</head>
-<body>
-    <% for (let i = 0 , i< ) %> 
-</body>
-</html>
+<%- layout("layouts/boilerplate.ejs") %>
+<h2 class="text-center my-5 gy-5 ">Pizzas</h2>
+
+<div class=" container  text-center row justify-content-center px-0 my-5 gx-5 gy-4 justify-content-around">
+    <% for(let p of pizzas) { %>       
+            <div class="card  rounded-3 col-8 col-sm-6 col-md-4 pt-0 px-0 mb-3  " style="width: 30%;">
+                <img src= "<%= p.image %> " class="card-img-top img-fluid mx-0 my-0" >
+                <div class="card-body">
+                <h5 class="card-title rounded-3"><%= p.name %> </h5>
+                <p class="card-text container text-muted text-left"> <%= p.ingredients %> </p>
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-warning d-flex justify-content-end ">Add to cart</a>
+                </div>
+                </div>
+            </div>
+    <% } %> 
+</div>
