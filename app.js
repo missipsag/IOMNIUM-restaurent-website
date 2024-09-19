@@ -25,7 +25,7 @@ app.set("view engine", "ejs");
 app.use("/IOMNIUM", productRoutes);
 
 //set up the static file directory 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static( path.join(__dirname, 'public')));
 
 
 
