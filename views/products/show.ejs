@@ -1,0 +1,48 @@
+<%- layout("layouts/boilerplate.ejs") %>
+<div class="show-page">
+    <div class="show-page-hero">
+        <div class=" show-product-card " >
+            <img src= "<%= p.image%> " class="product-img" >
+            <div class="product-card-body">
+            <div class="show-product-name-price">
+                <h5 class="product-name"><%= p.name %> </h5>
+                <span class="product-price"><%= p.price %> </span>
+            </div>              
+            <p class="product-ingredients"> <%= p.ingredients %> </p>
+            </div>
+            <div class="show-product-actions product-actions">
+                <a href="#" class=" product-btn-add-to-cart">Add to cart</a>
+            </div>
+        </div>
+
+        <div class="review-form">
+            <form action="/IOMNIUM/<%=p._id %>/reviews " method="post">
+                <label for="username"> Username
+                    <input type="text" placeholder="    Your username" id="username" name="username">
+                </label>
+                <div class="review-form-comment">
+                    <label for="comment"> Comment
+                        <textarea  name="comment" id="comment" cols="30" rows="10" placeholder="     Your comment" ></textarea>
+                    </label>
+                </div>
+                <label for="rating">
+                    <input type="radio" name="" id="">
+                </label>
+                <input class="  review-form-btn-submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <div class="show-page-reviews">
+        <% for (let r of reviews ) {%> 
+            <div class="review">
+                <h5><%= r.username %> </h5>
+                <p > <%= r.comment %> </p> 
+                <p> <%= r.rating %> </p>
+                
+            </div>
+        <% } %> 
+    </div>
+
+
+</div>

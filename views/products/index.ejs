@@ -1,17 +1,86 @@
 <%- layout("layouts/boilerplate.ejs") %>
-<h2 class="text-center my-5 gy-5 ">Pizzas</h2>
 
-<div class=" container  text-center row justify-content-center px-0 my-5 gx-5 gy-4 justify-content-around">
+<h2 class="product-category ">Pizzas</h2>
+<hr>
+<div class=" hero ">
     <% for(let p of pizzas) { %>       
-            <div class="card  rounded-3 col-8 col-sm-6 col-md-4 pt-0 px-0 mb-3  " style="width: 30%;">
-                <img src= "<%= p.image %> " class="card-img-top img-fluid mx-0 my-0" >
-                <div class="card-body">
-                <h5 class="card-title rounded-3"><%= p.name %> </h5>
-                <p class="card-text container text-muted text-left"> <%= p.ingredients %> </p>
-                <div class="d-flex justify-content-end">
-                    <a href="#" class="btn btn-warning d-flex justify-content-end ">Add to cart</a>
+            <div class="product-card" >
+                <img src= "<%= p.image %> " class="product-img" alt="<%= p.name %> ">
+                <div class="product-card-body">
+                <div class="product-name-price">
+                    <h5 class="product-name"><%= p.name %> </h5>
+                    <span class="product-price"><%= p.price %> </span>
+                </div>          
+                <p class="product-ingredients"> <%= p.ingredients %> </p>
                 </div>
+                <div class="product-actions">
+                    <a href="/IOMNIUM/<%= p._id %>" class="product-btn-info">info</a>
+                    <a href="# " class=" product-btn-add-to-cart">Add to cart</a>
                 </div>
             </div>
+    <% } %> 
+</div>
+
+<h2 class="product-category">Sandwiches</h2>
+<hr>
+<div class="hero"> 
+    <% for(let s of sandwiches) { %>       
+        <div class="product-card" >
+            <img src= "<%= s.image %> " class="product-img" alt="<%= s.name %> ">
+            <div class="product-card-body">
+                <div class="product-name-price">
+                    <h5 class="product-name"><%= s.name %> </h5>
+                <span class="product-price"><%= s.price %> </span>
+                </div> 
+                 <p class="product-ingredients"> <%= s.ingredients %> </p>
+            </div>
+            <div class="product-actions">
+                <a href="/IOMNIUM/<%= s._id %>" class="product-btn-info">info</a>
+                <a href="# " class=" product-btn-add-to-cart">Add to cart</a>
+            </div>
+        </div>
+    <% } %> 
+</div>
+
+<h2 class="product-category">Desserts</h2>
+<hr>
+<div class="hero"> 
+    <% for(let d of desserts) { %>       
+        <div class="product-card" >
+            <img src= "<%= d.image %> " class="product-img" alt="<%= d.name %> ">
+            <div class="product-card-body">
+                <div class="product-name-price">
+                    <h5 class="product-name"><%= d.name %> </h5>
+                    <span class="product-price"><%= d.price %> </span>
+                </div> 
+            <p class="product-ingredients"> <%= d.ingredients %> </p>
+            </div>
+            <div class="product-actions">
+                <a href="/IOMNIUM/<%= d._id %>" class="product-btn-info">info</a>
+                <a href="# " class=" product-btn-add-to-cart">Add to cart</a>
+            </div>
+        </div>
+    <% } %> 
+</div>
+
+
+<h2 class="product-category">Drinks</h2>
+<hr>
+<div class="hero"> 
+    <% for(let d of drinks) { %>       
+        <div class="product-card" >
+            <img src= "<%= d.image %> " class="product-img" alt="<%= d.name %> ">
+            <div class="product-card-body">
+                <div class="product-name-price">
+                    <h5 class="product-name"><%= d.name %> </h5>
+                    <span class="product-price"><%= d.price %> </span>
+                </div> 
+            <p class="product-ingredients"> <%= d.ingredients %> </p>
+            </div>
+            <div class="product-actions">
+                <a href="/IOMNIUM/<%= d._id %>" class="product-btn-info">info</a>
+                <a href="# " class=" product-btn-add-to-cart">Add to cart</a>
+            </div>
+        </div>
     <% } %> 
 </div>

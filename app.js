@@ -3,6 +3,7 @@ const PORT = 3000;
 const ejsMate = require("ejs-mate");
 const path = require("path");
 const productRoutes = require("./routes/productRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -20,9 +21,13 @@ app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
+app.use(express.urlencoded({extended : true}));
+app.use(express.json());
+
 
 //set up our routes
 app.use("/IOMNIUM", productRoutes);
+app.use("/IOMNIUM", reviewRoutes);
 
 //set up the static file directory 
 app.use(express.static( path.join(__dirname, 'public')));

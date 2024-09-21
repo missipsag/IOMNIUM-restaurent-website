@@ -1,13 +1,298 @@
+
+
 * {
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     font-family: "Raleway", sans-serif;
+    scroll-behavior: smooth;
     text-decoration: none;
+    scroll-behavior: smooth;
+    
 }
-  
 
-#pizza-logo {
+body{
+    height: 100vh;
+    width: 100%;
+    scrollbar-width: thin;
+}
+
+/* the main container class is for the <%-body%> in the boilerplate */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar{
+    height: 8%;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 156, 43);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px    20px 0 rgba(0, 0, 0, 0.19);
+    
+    
+    
+}
+
+.navbar .logo h3{
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+
+.navbar li {
+    display: inline-block;
+    list-style: none;
+}
+
+ .nav-links a  {
+    color: #000000;
+    text-decoration: none;
+    font-size: bold;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    margin-right:3rem;
+}
+
+
+
+.hero {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap; 
+    padding-left:5% ;
+    padding-right: 5%;
+    margin: 3rem auto 3rem auto;
+    row-gap: 5rem ;
+    column-gap: 3%;
+    
+}   
+
+.product-category {
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-bottom-width: 30%;
+}
+.product-card {
+    transition: all .30s ease;
+    /* border: #f7bf28 2px solid; */
+    width: 26%;
+    height: 10%;
+    border-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+hr{
+    height:5px;
+    width: 30%;
+    background-color: orangered ;
+    border: none;
+    margin: 0 auto 2rem auto;
+
+}
+
+
+
+.product-img {
+    border-top-left-radius:5% ;
+    border-top-right-radius: 5%;
+    height: 50%;
+   
+
+}
+
+.product-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0 5px 3px 5px;
+
+}
+
+.product-name-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.product-card-body .product-name {
+    padding: 2%;
+    font-size:1.4rem ;
+    display: inline;
+
+
+}
+
+.product-card .product-price {
+    color: orangered;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.product-card-body .product-ingredients {
+   color: rgb(133, 132, 132);
+   font-size : 1rem;
+   padding: 0.2rem;
+   margin-left: 2%;
+   text-align: left;
+   margin: 0 0 3% 0;
+
+}
+
+
+
+.product-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px    20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+}
+
+.product-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    margin: 0 8px 8px 0;
+    height: 18%;
+    font-weight: bold;
+}
+
+.product-actions .product-btn-info  {
+    background-color:#28c4f6 ;
+    color: white;
+    padding: 8px 10px ;
+    border-radius: 8px;
     height: 100%;
-    width : 10%;
 }
 
+.product-actions .product-btn-add-to-cart {
+    background-color:orangered ;
+    color: white;
+    padding: 8px 10px ;
+    border-radius: 8px;
+    height: 100%;
+}
+
+
+ .review-form {
+    box-sizing: border-box;
+    margin: 2rem auto;
+    border: 2px solid rgb(196, 196, 196);
+    border-radius: 5%;
+    padding: 1rem ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px    20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+/* use the decendent selector to select the form 
+    because forms don't inherit styles from parent elements */
+.review-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1.5rem;    
+    font-weight: bold;
+    border-radius:5% ;
+
+}
+
+.review-form input, .review-form textarea {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px    20px 0 rgba(0, 0, 0, 0.19); */
+    padding: 3px 5Px 3px 5px ;
+    border-radius:5px;
+    border: 2px solid rgb(196, 196, 196);
+    margin-left: 0.5rem;
+    
+}
+
+.review-form-btn-submit {
+    color: white;
+    background-color: rgb(52, 197, 255);
+    padding: 8px  10px;
+    font-weight: inherit;
+    height: 100%;
+    width: 30%;
+}
+
+.show-page {
+    margin: auto;
+    border: 2px solid red;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.show-page-hero{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem ;
+}
+
+.show-product-card {
+    transition: all .30s ease;
+    border: #f7bf28 2px solid; 
+    width: 50%;
+    height: 40%;
+    border-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.show-page-reviews {
+    border: red 2px solid;
+    display: grid;
+    grid-template-columns: 2;
+    width: 100%;
+    height: 15rem;
+    overflow-y: scroll;
+    scrollbar-width: 1vw;
+    scrollbar-color: gray whitesmoke;
+
+    padding: 2rem;
+
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin : 1rem 1.5rem 1.5rem 1.5rem;
+    gap: 1rem;
+    background-color: rgb(231, 231, 231);
+    border-radius: 15px;
+    width: 20vw;
+    height: 15vh;
+
+    padding: 1.2rem;
+
+}
+
+.review h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}

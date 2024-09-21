@@ -1,5 +1,5 @@
 const  mongoose = require("mongoose")
-
+const Schema = mongoose.Schema;
 
 const productSchema = new mongoose.Schema({
     name : {
@@ -26,7 +26,11 @@ const productSchema = new mongoose.Schema({
     category : {
         type : String,
         enum : ['pizza' , 'sandwich', 'drink' , 'dessert']
-    }
+    },
+    reviews :[ {
+        type : Schema.Types.ObjectId,
+        ref : 'Review'
+    }]
 })
 
 const Product = mongoose.model('Product', productSchema);
